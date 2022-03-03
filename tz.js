@@ -20,9 +20,11 @@ else {
 }
 
 const flag = yargs.argv._[0];
+const length = yargs.argv._.length;
 // console.log(targetTimezone);
 // console.log(yargs.argv);
 console.log(flag);
+console.log(length);
 
 
 /* if (yargs.argv._[1] === "true") {
