@@ -2,9 +2,9 @@ const moment = require('moment-timezone');
 
 moment.tz.setDefault('America/New_York');
 
-const yargs = require('yargs');
+const form = 'dddd, MMMM Do YYYY, h:mm:ss a';
 
-moment();
+const yargs = require('yargs');
 
 const targetTimezone = yargs.argv._[0];
 
@@ -13,8 +13,22 @@ if (!targetTimezone) {
   process.exit(1);
 }
 
-console.log(
-  `The time at the ${targetTimezone} timezone is ${moment()
-    .tz(targetTimezone)
-    .format()}`
-);
+if (yargs.argv.format === true) {
+  console.log(
+    `The time at the ${targetTimezone} timezone is ${moment()
+      .tz(targetTimezone)
+      .format('dddd, MMMM Do YYYY, h:mm:ss a')}`
+  );
+  console.log(
+    `The time at the America/New_York timezone is ${moment().format(form)}`
+  );
+} else {
+  console.log(
+    `The time at the ${targetTimezone} timezone is ${moment()
+      .tz(targetTimezone)
+      .format()}`
+  );
+  console.log(
+    `The time at the America/New_York timezone is ${moment().format()}`
+  );
+}
