@@ -26,5 +26,5 @@ if (yargs.argv.format === true) {
       .tz(targetTimezone)
       .format()}`
   );
-  console.log(`The time here timezone is ${moment().format()}`);
+  console.log(`The time here is ${moment().format()}`);
 }
