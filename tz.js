@@ -8,6 +8,12 @@ const yargs = require('yargs');
 
 const targetTimezone = yargs.argv._[0];
 
+if (yargs.argv.all === true) {
+  console.table(moment.tz.names());
+} else if (yargs.argv.country) {
+  console.table(moment.tz.zonesForCountry(yargs.argv.country));
+}
+
 if (!targetTimezone) {
   console.log('Usage: node <script-file><timezone>');
   process.exit(1);
