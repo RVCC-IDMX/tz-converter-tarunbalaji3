@@ -1,10 +1,10 @@
 const moment = require('moment-timezone');
 
+const yargs = require('yargs');
+
 moment.tz.setDefault('America/New_York');
 
 const form = 'dddd, MMMM Do YYYY, h:mm:ss a';
-
-const yargs = require('yargs');
 
 const targetTimezone = yargs.argv._[0];
 
@@ -15,7 +15,9 @@ if (yargs.argv.all === true) {
 }
 
 if (!targetTimezone) {
-  console.log('Usage: node <script-file><timezone>');
+  console.log(
+    'Usage: node <script-file><timezone>\n--format: format the time in the specified format\nexample: node tz Asia/Kolkata --format'
+  );
   process.exit(1);
 }
 
