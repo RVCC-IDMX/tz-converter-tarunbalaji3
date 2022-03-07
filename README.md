@@ -14,6 +14,6 @@ In order to get a list of all timezones avaliable, pass the following argument t
 
 ![command line screenshot](images/usage_2.png)
 
-In order to get a list of all timezones avaliable in a specific country, pass the following argument to the command line using the --all flag and the country's 2-letter code:
+In order to get a list of all timezones avaliable in a specific country, pass the following argument to the command line using the --country flag and the country's 2-letter code:
 
 ![command line screenshot](images/usage_3.png)
